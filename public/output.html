@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Maps Api</title>
+
+    <style>
+      #map {
+        height: 700px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+<!-- For the demo purpose, I am hardcoding it as there are no users yet -->
+    <h1><center>Tracking 212 Bus - ETA : 28 mins</center></h1>
+
+    <div id="map"></div>
+
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5YkAl2L0vRZ90iuXdXzWd1hr45aG0r_A&callback=initMap" ></script>
+  </body>
+
+  <script>
+    function initMap() {
+      // Map option
+
+      var options = {
+        center: { lat: 17.5448888, lng: 78.5696493 },
+        zoom: 10,
+      };
+
+      //New Map
+      map = new google.maps.Map(document.getElementById("map"), options);
+
+      //listen for click on map location
+
+      google.maps.event.addListener(map, "click", (event) => {
+        //add Marker
+        addMarker({ location: event.latLng });
+      });
+
+
+      //Add Markers to Array
+
+      let MarkerArray = [
+        {
+          location: { lat: 17.5448888, lng: 78.5696493 },
+          imageIcon: "https://img.icons8.com/nolan/2x/marker.png",
+          content: `<h2>BITS Pilani Hyderabad Campus</h2>`,
+        },
+
+        { location: { lat: 17.5448888, lng: 78.5696493 } },
+
+        {
+          location: { lat: 17.4359442, lng: 78.4933281 },
+          content: `<h2>Secunderabad Railway Station</h2>`,
+        },
+      ];
+
+      // loop through marker
+      for (let i = 0; i < MarkerArray.length; i++) {
+        addMarker(MarkerArray[i]);
+      }
+
+      // Add Marker
+
+      function addMarker(property) {
+        const marker = new google.maps.Marker({
+          position: property.location,
+          map: map,
+          //icon: property.imageIcon
+        });
+
+        // Check for custom Icon
+
+        if (property.imageIcon) {
+          // set image icon
+          marker.setIcon(property.imageIcon);
+        }
+
+        if (property.content) {
+          const detailWindow = new google.maps.InfoWindow({
+            content: property.content,
+          });
+
+          marker.addListener("mouseover", () => {
+            detailWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+</html>

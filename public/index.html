@@ -1,0 +1,64 @@
+<!-- This is the base file  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A song recommendation app" />
+
+    <title>Where is 212</title>
+
+    <!-- import the webpage's stylesheet (style.css) -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body bgcolor="#121212">
+    <main id="main-content" align="center">
+      
+      <!--       Title -->
+      <h1>Where is 212!!</h1>
+      <!--       Bus Image -->
+      <img src="https://cms.eichertrucksandbuses.com/uploads/truck/sub-category/a933e5958e4a354cfb8d22665bd244fd.png" width="150px" />
+      <br />
+      <br />
+      <!--       know location button -->
+      <form action="output.html" method="get">
+        <div class="temp">
+          <button class="gradient-button gradient-button-1" id="user">
+            <b>Know Location</b>
+          </button>
+        </div>
+      </form>
+      <!--       share location button -->
+      <form action="" method="get">
+        <div class="temp">
+          <button
+            onclick="loc()"
+            class="gradient-button gradient-button-2"
+            id="traveller"
+          >
+            <b>
+<!--               Value of button changes as user share it's location -->
+              <span id ="locationSharing">Share Location</span></b>
+          </button>
+        </div>
+      </form>
+      
+      
+<!--      trying form input
+       <form id="test" onsubmit= "submitForm(event)">
+        <input type = "text" name= "testinput">
+        <input type = "submit" id="submitButton" value="submit">
+      </form> -->
+      
+    </main>
+    
+<!--     footer =>  https and restart request  -->
+    <footer style="color:white">Use https:// instead of http:// in the url to give location access
+    <span id ="temp">  </span></footer>
+
+    <!-- import client-side Javascript file  -->
+    <script src="./script.js" defer></script>
+   
+  </body>
+</html>
