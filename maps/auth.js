@@ -1,4 +1,4 @@
-// This file is not used right now as I oAuth is not done here
+// This file is not used right now as oAuth is not done here
 const axios= require("axios")
 
 const qs= require("qs")
