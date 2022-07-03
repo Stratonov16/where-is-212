@@ -1,6 +1,6 @@
+
 # Where-is-212
-<center>
-Hosted on: https://where-is-212.glitch.me/
+https://where-is-212.glitch.me/ <br> <br>
 Application that tracks Bus 212 location using google maps geolocation api and directions api to calculated estimated time of arrival. Made using Js, node, express, axios and similar libraries as a part of Postman hackathon <br><br>
 On the front-end,
 
@@ -13,9 +13,6 @@ On the back-end,
 
 - your app starts at `server.js`
 - add frameworks and packages in `package.json`
-
-<center>
-Hosted on: https://where-is-212.glitch.me/
 
 ## Project description:
 
